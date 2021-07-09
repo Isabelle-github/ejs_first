@@ -1,0 +1,18 @@
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/nav') %>
+            <h1>Gallery</h1>
+            <section>
+                <% if (datas.length> 0 ) { %>
+                    <% datas.forEach(el=>{ %>
+                        <img src=<%=el.download_url %> alt="img">
+                        <!-- <p>
+                            <%= el.author %>
+                        </p> -->
+                        <% }) %>
+                            <% } %>
+            </section>
+    </body>
+
+    </html>

@@ -1,19 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <body>
+        <%- include('./partials/nav') %>
+            <h1>About</h1>
+            <section>
+                <% if (news.length> 0) { %>
 
-<body>
-    <nav>
-        <a href="/"> Home</a>
-        <a href="/about"> About</a>
-    </nav>
-    <h1>About</h1>
-</body>
+                    <% news.forEach(el=> { %>
+                        <article>
+                            <h2>
+                                <%=el.title %>
+                            </h2>
+                            <a href=<%=el.url %> target=_blank> <img src=<%=el.urlToImage %> alt="img"></a>
+                            <p>
+                                <%= el.content %>
+                            </p>
+                        </article>
+                        <% }) %>
+                            <% } %>
+            </section>
+    </body>
 
-</html>
+    </html>
